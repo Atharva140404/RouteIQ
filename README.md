@@ -49,6 +49,11 @@ This project analyzes address correction patterns and delivery outcomes to under
 ## Dashboard
 
 The Power BI dashboard provides an interactive view of address quality and delivery performance, including KPI metrics, correction analysis, trends, and geographic filters.
+![RouteIQ Power BI Dashboard](powerbi/RouteIQ-Preview.png)
+
+### Detailed Analysis Dashboard
+
+[View Detailed Dashboard →](powerbi/RouteIQ-Detailed-Analysis.png)
 
 ## Project Outcome
 
