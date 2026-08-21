@@ -1,0 +1,2 @@
+total_records,correction_required,correction_rate_pct,delivery_success,delivery_success_rate_pct,pincode_mismatches,pincode_mismatch_rate_pct,avg_address_accuracy_score,records_below_50_accuracy,records_above_90_accuracy,total_pincode_corrections,top_error_type,top_error_pct,worst_zone,best_zone,best_correction_source,hotspot_city_zones
+10500,6562,62.5,8029,76.47,737,7.02,73.4,1483,3275,737,Incorrect House Number,11.41,Zone A,Zone C,AI Model,23

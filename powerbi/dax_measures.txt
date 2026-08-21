@@ -1,0 +1,445 @@
+// =============================================================
+//  ADDRESS ACCURACY & DELIVERY INSIGHTS
+//  dax_measures.txt  –  30+ Power BI DAX Measures
+//  Table name assumed: address_corrections
+// =============================================================
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 1: CORE KPI MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-01 Total Records
+Total Records =
+COUNTROWS(address_corrections)
+
+
+// M-02 Total Corrections Required
+Total Corrections =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[correction_required] = TRUE()
+)
+
+
+// M-03 Correction Rate %
+Correction Rate % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[correction_required] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-04 Delivery Success Count
+Delivery Success Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[delivery_success] = TRUE()
+)
+
+
+// M-05 Delivery Success Rate %
+Delivery Success Rate % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[delivery_success] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-06 Delivery Failure Rate %
+Delivery Failure Rate % =
+100 - [Delivery Success Rate %]
+
+
+// M-07 Average Address Accuracy Score
+Avg Accuracy Score =
+AVERAGE(address_corrections[address_accuracy_score])
+
+
+// M-08 Pincode Mismatch Count
+Pincode Mismatch Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[pincode_mismatch] = TRUE()
+)
+
+
+// M-09 Pincode Mismatch Rate %
+Pincode Mismatch Rate % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[pincode_mismatch] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-10 Records with Critical Accuracy (<50)
+Critical Accuracy Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[address_accuracy_score] < 50
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 2: ACCURACY BAND MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-11 Accuracy Band Label (calculated column — paste in Power Query or add as column)
+// Accuracy Band =
+// SWITCH(
+//     TRUE(),
+//     address_corrections[address_accuracy_score] < 50,             "1. Critical (<50)",
+//     address_corrections[address_accuracy_score] < 65,             "2. Low (50-64)",
+//     address_corrections[address_accuracy_score] < 80,             "3. Medium (65-79)",
+//     address_corrections[address_accuracy_score] < 90,             "4. High (80-89)",
+//     "5. Excellent (90+)"
+// )
+
+
+// M-12 Excellent Accuracy Count (≥90)
+Excellent Accuracy Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[address_accuracy_score] >= 90
+)
+
+
+// M-13 Excellent Accuracy Rate %
+Excellent Accuracy Rate % =
+DIVIDE([Excellent Accuracy Count], [Total Records], 0) * 100
+
+
+// M-14 High Accuracy Count (80-89)
+High Accuracy Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[address_accuracy_score] >= 80,
+    address_corrections[address_accuracy_score] < 90
+)
+
+
+// M-15 Medium Accuracy Count (65-79)
+Medium Accuracy Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[address_accuracy_score] >= 65,
+    address_corrections[address_accuracy_score] < 80
+)
+
+
+// M-16 Low Accuracy Count (50-64)
+Low Accuracy Count =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[address_accuracy_score] >= 50,
+    address_corrections[address_accuracy_score] < 65
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 3: ZONE PERFORMANCE MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-17 Zone Correction Rate % (context-sensitive)
+Zone Correction Rate % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[correction_required] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-18 Zone Avg Accuracy Score
+Zone Avg Accuracy =
+CALCULATE(AVERAGE(address_corrections[address_accuracy_score]))
+
+
+// M-19 Zone Delivery Success Rate %
+Zone Delivery Success % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[delivery_success] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-20 Best Performing Zone (returns zone name as text)
+Best Zone by Accuracy =
+CALCULATE(
+    FIRSTNONBLANK(address_corrections[delivery_zone], 1),
+    TOPN(
+        1,
+        SUMMARIZE(address_corrections, address_corrections[delivery_zone],
+                  "AvgAcc", AVERAGE(address_corrections[address_accuracy_score])),
+        [AvgAcc], DESC
+    )
+)
+
+
+// M-21 Worst Performing Zone (returns zone name as text)
+Worst Zone by Correction Rate =
+CALCULATE(
+    FIRSTNONBLANK(address_corrections[delivery_zone], 1),
+    TOPN(
+        1,
+        SUMMARIZE(address_corrections, address_corrections[delivery_zone],
+                  "CorrRate", DIVIDE(
+                      CALCULATE(COUNTROWS(address_corrections),
+                                address_corrections[correction_required] = TRUE()),
+                      COUNTROWS(address_corrections), 0)),
+        [CorrRate], DESC
+    )
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 4: WEEKLY TREND MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-22 Weekly Accuracy Trend (used with week_number on axis)
+Weekly Avg Accuracy =
+CALCULATE(AVERAGE(address_corrections[address_accuracy_score]))
+
+
+// M-23 Previous Week Accuracy (LAG equivalent)
+Prev Week Accuracy =
+CALCULATE(
+    AVERAGE(address_corrections[address_accuracy_score]),
+    FILTER(
+        ALL(address_corrections[week_number]),
+        address_corrections[week_number] = MAX(address_corrections[week_number]) - 1
+    )
+)
+
+
+// M-24 Week-over-Week Accuracy Delta
+WoW Accuracy Delta =
+[Weekly Avg Accuracy] - [Prev Week Accuracy]
+
+
+// M-25 Weekly Correction Rate Trend
+Weekly Correction Rate % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[correction_required] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-26 4-Week Rolling Average Accuracy
+Rolling 4W Avg Accuracy =
+AVERAGEX(
+    FILTER(
+        ALL(address_corrections[week_number]),
+        address_corrections[week_number] <= MAX(address_corrections[week_number]) &&
+        address_corrections[week_number] > MAX(address_corrections[week_number]) - 4
+    ),
+    CALCULATE(AVERAGE(address_corrections[address_accuracy_score]))
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 5: HOTSPOT DETECTION MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-27 Hotspot Score (composite — use on city + zone matrix)
+Hotspot Score =
+VAR CorrRate =
+    DIVIDE(
+        CALCULATE(COUNTROWS(address_corrections), address_corrections[correction_required] = TRUE()),
+        COUNTROWS(address_corrections), 0
+    ) * 100
+VAR FailRate =
+    DIVIDE(
+        CALCULATE(COUNTROWS(address_corrections), address_corrections[delivery_success] = FALSE()),
+        COUNTROWS(address_corrections), 0
+    ) * 100
+VAR AvgAcc = AVERAGE(address_corrections[address_accuracy_score])
+RETURN
+    ROUND(CorrRate * 0.4 + FailRate * 0.4 + (100 - AvgAcc) * 0.2, 2)
+
+
+// M-28 Is Hotspot Flag (1 if hotspot score > 75th percentile threshold)
+Is Hotspot =
+IF([Hotspot Score] >= 43, "Hotspot", "Normal")
+
+
+// M-29 Hotspot Zone Count
+Hotspot Zone Count =
+COUNTROWS(
+    FILTER(
+        SUMMARIZE(
+            address_corrections,
+            address_corrections[delivery_zone],
+            "HotScore", [Hotspot Score]
+        ),
+        [HotScore] >= 43
+    )
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 6: CORRECTION SOURCE EFFECTIVENESS
+// ─────────────────────────────────────────────────────────────
+
+// M-30 Correction Source Success Rate %
+Source Success Rate % =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(address_corrections),
+        address_corrections[delivery_success] = TRUE(),
+        address_corrections[correction_required] = TRUE()
+    ),
+    CALCULATE(
+        COUNTROWS(address_corrections),
+        address_corrections[correction_required] = TRUE()
+    ),
+    0
+) * 100
+
+
+// M-31 AI Model Correction Success Rate %
+AI Model Success Rate % =
+CALCULATE(
+    DIVIDE(
+        CALCULATE(COUNTROWS(address_corrections), address_corrections[delivery_success] = TRUE()),
+        COUNTROWS(address_corrections),
+        0
+    ) * 100,
+    address_corrections[correction_source] = "AI Model",
+    address_corrections[correction_required] = TRUE()
+)
+
+
+// M-32 Manual Review Success Rate %
+Manual Review Success Rate % =
+CALCULATE(
+    DIVIDE(
+        CALCULATE(COUNTROWS(address_corrections), address_corrections[delivery_success] = TRUE()),
+        COUNTROWS(address_corrections),
+        0
+    ) * 100,
+    address_corrections[correction_source] = "Manual Review",
+    address_corrections[correction_required] = TRUE()
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 7: TOP ERROR REGIONS
+// ─────────────────────────────────────────────────────────────
+
+// M-33 Top Error City (returns city name)
+Top Error City =
+CALCULATE(
+    FIRSTNONBLANK(address_corrections[city], 1),
+    TOPN(
+        1,
+        SUMMARIZE(address_corrections, address_corrections[city],
+                  "TotalErr", CALCULATE(COUNTROWS(address_corrections),
+                                        address_corrections[correction_required] = TRUE())),
+        [TotalErr], DESC
+    )
+)
+
+
+// M-34 Corrections for Selected City
+City Total Corrections =
+CALCULATE(
+    COUNTROWS(address_corrections),
+    address_corrections[correction_required] = TRUE()
+)
+
+
+// M-35 City Pincode Mismatch %
+City Pincode Mismatch % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections), address_corrections[pincode_mismatch] = TRUE()),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 8: SUMMARY & REPORTING MEASURES
+// ─────────────────────────────────────────────────────────────
+
+// M-36 Address Quality Index (0-100 composite score)
+Address Quality Index =
+VAR AvgAcc  = AVERAGE(address_corrections[address_accuracy_score])
+VAR DelRate = DIVIDE(CALCULATE(COUNTROWS(address_corrections),
+                               address_corrections[delivery_success] = TRUE()),
+                     COUNTROWS(address_corrections), 0) * 100
+VAR CorrRate = DIVIDE(CALCULATE(COUNTROWS(address_corrections),
+                                address_corrections[correction_required] = FALSE()),
+                      COUNTROWS(address_corrections), 0) * 100
+RETURN
+    ROUND((AvgAcc * 0.5 + DelRate * 0.3 + CorrRate * 0.2), 2)
+
+
+// M-37 Data Completeness % (non-null correction type among corrections)
+Data Completeness % =
+DIVIDE(
+    CALCULATE(COUNTROWS(address_corrections),
+              address_corrections[correction_type] <> "None"),
+    COUNTROWS(address_corrections),
+    0
+) * 100
+
+
+// M-38 Cumulative Corrections (running total — use on date/week axis)
+Cumulative Corrections =
+CALCULATE(
+    COUNTROWS(FILTER(address_corrections, address_corrections[correction_required] = TRUE())),
+    FILTER(
+        ALL(address_corrections[week_number]),
+        address_corrections[week_number] <= MAX(address_corrections[week_number])
+    )
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// SECTION 9: CONDITIONAL FORMAT HELPERS
+// ─────────────────────────────────────────────────────────────
+
+// M-39 Accuracy Status Label
+Accuracy Status =
+SWITCH(
+    TRUE(),
+    [Avg Accuracy Score] >= 90, "Excellent",
+    [Avg Accuracy Score] >= 80, "Good",
+    [Avg Accuracy Score] >= 65, "Needs Improvement",
+    "Critical"
+)
+
+
+// M-40 Delivery Risk Flag
+Delivery Risk =
+SWITCH(
+    TRUE(),
+    [Delivery Failure Rate %] >= 40, "HIGH RISK",
+    [Delivery Failure Rate %] >= 25, "MEDIUM RISK",
+    "LOW RISK"
+)
+
+
+// ─────────────────────────────────────────────────────────────
+// NOTES FOR POWER BI SETUP
+// ─────────────────────────────────────────────────────────────
+//
+// 1. Import address_records.csv as the primary table named "address_corrections"
+// 2. Import zone_summary.csv as "zone_summary" — link via delivery_zone
+// 3. Import hotspot_analysis.csv as "hotspot_analysis" — link via city + delivery_zone
+// 4. Import correction_report.csv as "correction_report" — link via correction_type
+// 5. Add a Date table if building full time intelligence with DATEADD/SAMEPERIODLASTYEAR
+//
+// Recommended Visuals:
+// ┌─ KPI Cards: M-01 to M-10
+// ├─ Stacked Bar: Correction Types by Zone (M-08)
+// ├─ Line Chart: Weekly Accuracy + Rolling Avg (M-22, M-26)
+// ├─ Map/Filled Map: City Hotspot Score (M-27) — use city as location
+// ├─ Matrix: City × Zone Hotspot Score (M-27, M-28)
+// ├─ Gauge: Address Quality Index (M-36)
+// └─ Bar: Source Effectiveness (M-30, M-31, M-32)

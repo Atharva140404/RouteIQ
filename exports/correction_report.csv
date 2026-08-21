@@ -1,0 +1,10 @@
+correction_type,frequency,avg_accuracy,pincode_mismatch_pct,delivery_fail_rate,pct_of_all_corrections
+Incorrect House Number,749,69.52,0.0,27.24,11.41
+Missing Locality,745,54.92,0.0,40.4,11.35
+Pincode Mismatch,737,45.1,100.0,53.73,11.23
+Duplicate Address,733,70.19,0.0,23.6,11.17
+Incomplete Address,730,54.61,0.0,40.0,11.12
+Spelling Error,728,70.37,0.0,25.96,11.09
+Wrong City-State,728,44.78,0.0,53.71,11.09
+Street Name Error,724,70.39,0.0,29.28,11.03
+Missing Landmark,688,69.96,0.0,27.47,10.48

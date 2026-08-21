@@ -1,0 +1,6 @@
+delivery_zone,total_orders,corrections_needed,pincode_mismatches,avg_accuracy,delivery_success_rate,correction_rate_pct,pincode_mismatch_pct
+Zone A,2060,1317,162,73.04,76.46,63.93,7.86
+Zone B,2153,1343,145,73.63,77.24,62.38,6.73
+Zone C,2080,1273,141,73.71,75.87,61.2,6.78
+Zone D,2135,1329,155,73.35,76.53,62.25,7.26
+Zone E,2072,1300,134,73.23,76.21,62.74,6.47

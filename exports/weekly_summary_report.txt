@@ -1,0 +1,366 @@
+ADDRESS ACCURACY & DELIVERY INSIGHTS — WEEKLY ANALYTICAL SUMMARY
+=================================================================
+
+Week 01
+  Total Orders         : 272
+  Corrections Needed   : 172  (63.2%)
+  Pincode Mismatches   : 26
+  Avg Accuracy Score   : 72.57
+  Delivery Success Rate: 74.6%
+
+Week 02
+  Total Orders         : 213
+  Corrections Needed   : 133  (62.4%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 72.99
+  Delivery Success Rate: 76.5%
+
+Week 03
+  Total Orders         : 216
+  Corrections Needed   : 137  (63.4%)
+  Pincode Mismatches   : 17
+  Avg Accuracy Score   : 73.65
+  Delivery Success Rate: 76.4%
+
+Week 04
+  Total Orders         : 176
+  Corrections Needed   : 118  (67.0%)
+  Pincode Mismatches   : 13
+  Avg Accuracy Score   : 72.20
+  Delivery Success Rate: 75.6%
+
+Week 05
+  Total Orders         : 209
+  Corrections Needed   : 121  (57.9%)
+  Pincode Mismatches   : 6
+  Avg Accuracy Score   : 74.33
+  Delivery Success Rate: 80.9%
+
+Week 06
+  Total Orders         : 203
+  Corrections Needed   : 135  (66.5%)
+  Pincode Mismatches   : 15
+  Avg Accuracy Score   : 71.78
+  Delivery Success Rate: 78.3%
+
+Week 07
+  Total Orders         : 218
+  Corrections Needed   : 140  (64.2%)
+  Pincode Mismatches   : 15
+  Avg Accuracy Score   : 72.07
+  Delivery Success Rate: 71.6%
+
+Week 08
+  Total Orders         : 203
+  Corrections Needed   : 131  (64.5%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 72.94
+  Delivery Success Rate: 79.8%
+
+Week 09
+  Total Orders         : 195
+  Corrections Needed   : 111  (56.9%)
+  Pincode Mismatches   : 20
+  Avg Accuracy Score   : 73.17
+  Delivery Success Rate: 76.9%
+
+Week 10
+  Total Orders         : 207
+  Corrections Needed   : 117  (56.5%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 75.82
+  Delivery Success Rate: 75.8%
+
+Week 11
+  Total Orders         : 212
+  Corrections Needed   : 138  (65.1%)
+  Pincode Mismatches   : 22
+  Avg Accuracy Score   : 72.48
+  Delivery Success Rate: 74.5%
+
+Week 12
+  Total Orders         : 190
+  Corrections Needed   : 132  (69.5%)
+  Pincode Mismatches   : 21
+  Avg Accuracy Score   : 71.24
+  Delivery Success Rate: 73.7%
+
+Week 13
+  Total Orders         : 192
+  Corrections Needed   : 125  (65.1%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 71.94
+  Delivery Success Rate: 82.3%
+
+Week 14
+  Total Orders         : 194
+  Corrections Needed   : 118  (60.8%)
+  Pincode Mismatches   : 11
+  Avg Accuracy Score   : 74.73
+  Delivery Success Rate: 80.4%
+
+Week 15
+  Total Orders         : 191
+  Corrections Needed   : 118  (61.8%)
+  Pincode Mismatches   : 16
+  Avg Accuracy Score   : 74.53
+  Delivery Success Rate: 80.1%
+
+Week 16
+  Total Orders         : 205
+  Corrections Needed   : 127  (62.0%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 74.38
+  Delivery Success Rate: 77.6%
+
+Week 17
+  Total Orders         : 199
+  Corrections Needed   : 132  (66.3%)
+  Pincode Mismatches   : 9
+  Avg Accuracy Score   : 71.84
+  Delivery Success Rate: 74.9%
+
+Week 18
+  Total Orders         : 204
+  Corrections Needed   : 147  (72.1%)
+  Pincode Mismatches   : 24
+  Avg Accuracy Score   : 69.25
+  Delivery Success Rate: 74.5%
+
+Week 19
+  Total Orders         : 211
+  Corrections Needed   : 140  (66.3%)
+  Pincode Mismatches   : 19
+  Avg Accuracy Score   : 72.02
+  Delivery Success Rate: 74.9%
+
+Week 20
+  Total Orders         : 214
+  Corrections Needed   : 119  (55.6%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 75.46
+  Delivery Success Rate: 75.2%
+
+Week 21
+  Total Orders         : 226
+  Corrections Needed   : 144  (63.7%)
+  Pincode Mismatches   : 6
+  Avg Accuracy Score   : 74.52
+  Delivery Success Rate: 75.2%
+
+Week 22
+  Total Orders         : 174
+  Corrections Needed   : 103  (59.2%)
+  Pincode Mismatches   : 7
+  Avg Accuracy Score   : 74.43
+  Delivery Success Rate: 77.0%
+
+Week 23
+  Total Orders         : 187
+  Corrections Needed   : 118  (63.1%)
+  Pincode Mismatches   : 15
+  Avg Accuracy Score   : 72.42
+  Delivery Success Rate: 78.1%
+
+Week 24
+  Total Orders         : 188
+  Corrections Needed   : 117  (62.2%)
+  Pincode Mismatches   : 9
+  Avg Accuracy Score   : 73.46
+  Delivery Success Rate: 76.6%
+
+Week 25
+  Total Orders         : 187
+  Corrections Needed   : 119  (63.6%)
+  Pincode Mismatches   : 19
+  Avg Accuracy Score   : 72.21
+  Delivery Success Rate: 77.0%
+
+Week 26
+  Total Orders         : 176
+  Corrections Needed   : 109  (61.9%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 73.16
+  Delivery Success Rate: 73.9%
+
+Week 27
+  Total Orders         : 204
+  Corrections Needed   : 126  (61.8%)
+  Pincode Mismatches   : 15
+  Avg Accuracy Score   : 72.41
+  Delivery Success Rate: 76.0%
+
+Week 28
+  Total Orders         : 205
+  Corrections Needed   : 118  (57.6%)
+  Pincode Mismatches   : 8
+  Avg Accuracy Score   : 75.09
+  Delivery Success Rate: 82.9%
+
+Week 29
+  Total Orders         : 206
+  Corrections Needed   : 128  (62.1%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 73.82
+  Delivery Success Rate: 76.2%
+
+Week 30
+  Total Orders         : 206
+  Corrections Needed   : 135  (65.5%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 73.98
+  Delivery Success Rate: 71.4%
+
+Week 31
+  Total Orders         : 196
+  Corrections Needed   : 115  (58.7%)
+  Pincode Mismatches   : 17
+  Avg Accuracy Score   : 74.11
+  Delivery Success Rate: 79.6%
+
+Week 32
+  Total Orders         : 200
+  Corrections Needed   : 123  (61.5%)
+  Pincode Mismatches   : 13
+  Avg Accuracy Score   : 74.38
+  Delivery Success Rate: 76.0%
+
+Week 33
+  Total Orders         : 199
+  Corrections Needed   : 132  (66.3%)
+  Pincode Mismatches   : 13
+  Avg Accuracy Score   : 73.54
+  Delivery Success Rate: 77.9%
+
+Week 34
+  Total Orders         : 207
+  Corrections Needed   : 133  (64.2%)
+  Pincode Mismatches   : 9
+  Avg Accuracy Score   : 75.27
+  Delivery Success Rate: 78.3%
+
+Week 35
+  Total Orders         : 183
+  Corrections Needed   : 131  (71.6%)
+  Pincode Mismatches   : 13
+  Avg Accuracy Score   : 70.59
+  Delivery Success Rate: 74.9%
+
+Week 36
+  Total Orders         : 224
+  Corrections Needed   : 140  (62.5%)
+  Pincode Mismatches   : 23
+  Avg Accuracy Score   : 73.01
+  Delivery Success Rate: 74.5%
+
+Week 37
+  Total Orders         : 213
+  Corrections Needed   : 132  (62.0%)
+  Pincode Mismatches   : 18
+  Avg Accuracy Score   : 74.50
+  Delivery Success Rate: 77.0%
+
+Week 38
+  Total Orders         : 192
+  Corrections Needed   : 118  (61.5%)
+  Pincode Mismatches   : 17
+  Avg Accuracy Score   : 74.32
+  Delivery Success Rate: 76.6%
+
+Week 39
+  Total Orders         : 192
+  Corrections Needed   : 113  (58.9%)
+  Pincode Mismatches   : 11
+  Avg Accuracy Score   : 74.28
+  Delivery Success Rate: 78.1%
+
+Week 40
+  Total Orders         : 186
+  Corrections Needed   : 109  (58.6%)
+  Pincode Mismatches   : 17
+  Avg Accuracy Score   : 75.12
+  Delivery Success Rate: 78.0%
+
+Week 41
+  Total Orders         : 209
+  Corrections Needed   : 128  (61.2%)
+  Pincode Mismatches   : 15
+  Avg Accuracy Score   : 73.02
+  Delivery Success Rate: 69.9%
+
+Week 42
+  Total Orders         : 207
+  Corrections Needed   : 109  (52.7%)
+  Pincode Mismatches   : 11
+  Avg Accuracy Score   : 77.61
+  Delivery Success Rate: 79.7%
+
+Week 43
+  Total Orders         : 204
+  Corrections Needed   : 126  (61.8%)
+  Pincode Mismatches   : 18
+  Avg Accuracy Score   : 73.48
+  Delivery Success Rate: 72.1%
+
+Week 44
+  Total Orders         : 212
+  Corrections Needed   : 125  (59.0%)
+  Pincode Mismatches   : 17
+  Avg Accuracy Score   : 73.83
+  Delivery Success Rate: 75.9%
+
+Week 45
+  Total Orders         : 186
+  Corrections Needed   : 126  (67.7%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 71.39
+  Delivery Success Rate: 72.0%
+
+Week 46
+  Total Orders         : 225
+  Corrections Needed   : 153  (68.0%)
+  Pincode Mismatches   : 12
+  Avg Accuracy Score   : 72.24
+  Delivery Success Rate: 77.3%
+
+Week 47
+  Total Orders         : 200
+  Corrections Needed   : 123  (61.5%)
+  Pincode Mismatches   : 13
+  Avg Accuracy Score   : 74.49
+  Delivery Success Rate: 74.0%
+
+Week 48
+  Total Orders         : 183
+  Corrections Needed   : 116  (63.4%)
+  Pincode Mismatches   : 14
+  Avg Accuracy Score   : 72.31
+  Delivery Success Rate: 79.2%
+
+Week 49
+  Total Orders         : 200
+  Corrections Needed   : 116  (58.0%)
+  Pincode Mismatches   : 10
+  Avg Accuracy Score   : 75.39
+  Delivery Success Rate: 76.5%
+
+Week 50
+  Total Orders         : 208
+  Corrections Needed   : 127  (61.1%)
+  Pincode Mismatches   : 16
+  Avg Accuracy Score   : 73.80
+  Delivery Success Rate: 76.0%
+
+Week 51
+  Total Orders         : 201
+  Corrections Needed   : 127  (63.2%)
+  Pincode Mismatches   : 11
+  Avg Accuracy Score   : 71.53
+  Delivery Success Rate: 81.6%
+
+Week 52
+  Total Orders         : 190
+  Corrections Needed   : 112  (59.0%)
+  Pincode Mismatches   : 16
+  Avg Accuracy Score   : 73.06
+  Delivery Success Rate: 74.2%
